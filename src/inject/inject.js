@@ -15,8 +15,11 @@ function removeBuzzfeed () {
 		$('.fcg').each(function (index) {
 		var source = $(this).html();
 		if (source == 'buzzfeed.com') {
-			$(this).closest('._5jmm._5pat._5uch').remove();
-			console.log('removed somthing');
+			var what = $(this).siblings('._5pb2.fwb').html();
+			if (what.indexOf('?') > -1) {
+				$(this).closest('._5jmm._5pat._5uch').remove();
+				console.log('removed somthing');
+			}
 		}
 	});
 }
